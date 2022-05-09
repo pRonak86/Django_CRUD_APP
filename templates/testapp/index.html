@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/info.css'%}">
+</head>
+<body>
+	<div class="container">
+		<h1> Studet Information</h1>
+
+		{% if students %}
+			{% for stu in students %}
+				<h2> {{stu.name}} Information </h2> <hr>
+				<ul>
+					<li>Student Rollno: {{stu.rollno}}</li>
+					<li>Student DOB: {{stu.dob}}</li>
+					<li>Student Marks: {{stu.marks}}</li>
+					<li>Student Email: {{stu.email}}</li>
+					<li>Student phoneNo: {{stu.phonenumber}}</li>
+					<li>Student Address: {{stu.address}}</li>
+				</ul>
+				<br>
+			{% endfor%}
+			{% else %}
+				<p>Student record not availabel</p>
+		{% endif %}
+
+	</div>
+</body>
+</html>

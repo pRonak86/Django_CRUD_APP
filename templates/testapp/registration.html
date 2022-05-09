@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/info.css'%}">
+</head>
+<body>
+	<h1>Student Registration Form</h1>
+	<form action="/view/" method="POST">
+		{% csrf_token %}
+		<table align="center">
+			<tr>
+				<td>Roll No</td>
+				<td><input type="text" name="srno"></td>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td><input type="text" name="sname"></td>
+			</tr>
+			<tr>
+				<td>Date of Birth</td>
+				<td><input type="Date" name="sdate"></td>
+			</tr>
+			<tr>
+				<td>Marks</td>
+				<td><input type="text" name="smark"></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="text" name="semail"></td>
+			</tr>
+			<tr>
+				<td>Contact</td>
+				<td><input type="text" name="scontact"></td>
+			</tr>
+			<tr>
+				<td>Address</td>
+				<td><input type="text" name="saddr"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Register"></td>
+			</tr>
+		</table>
+	</form>
+	<a href="fetch/">View All Recored</a>
+</body>
+</html>

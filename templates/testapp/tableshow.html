@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/info.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    <a href="{% url 'index'%}">Add New Student Details</a>
+    <h1>Student Information</h1>
+    <table align="center">
+        <tr>
+            <th>ID</th>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Date of Birth</th>
+            <th>Marks</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+       
+        {% if students %}
+        {% for stu in students %}
+        <tr>
+           <td>{{stu.id}}</td>
+          <td>{{stu.rollno}}</td>
+          <td>{{stu.name}}</td>
+          <td>{{stu.dob}}</td>
+          <td>{{stu.marks}}</td>
+          <td>{{stu.email}}</td>
+          <td>{{stu.phonenumber}}</td>
+          <td>{{stu.address}}</td>
+          <td> <a href="{% url 'edit' pk=stu.pk %}" > Edit </a> </td>
+          <td> <a href="{% url 'delete' pk=stu.pk %}" > Delete </a> </td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+    </table>
+
+</body>
+</html>
